@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/candy_background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#6C00FFFF"
+        android:padding="2dp"
+        android:id="@+id/linLay"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_margin="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/start_button_select"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/back_button"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:text="@string/score_1"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/score"
+            android:text=" 0 "
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="550dp">
+
+        <GridLayout
+            android:id="@+id/board"
+            android:orientation="horizontal"
+            android:background="#6C00FFFF"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-5332101373774587/6709527742"><!--ca-app-pub-3940256099942544/6300978111-->
+        </com.google.android.gms.ads.AdView>
+
+</LinearLayout>

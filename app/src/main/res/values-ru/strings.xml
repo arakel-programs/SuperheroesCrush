@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SUPERHEROES Crush</string>
+    <string name="start_game">Играть</string>
+    <string name="back_button">Назат</string>
+    <string name="score_1">Очки -  </string>
+</resources>

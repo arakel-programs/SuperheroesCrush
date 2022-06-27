@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:src="@drawable/main_page" />
+
+<ImageView
+    android:id="@+id/main_photo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="100dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginBottom="200dp"
+    android:src="@drawable/main_photo" />
+
+<LinearLayout
+    android:id="@+id/startBtnLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="70dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:padding="10dp"
+    android:layout_marginBottom="50dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/start_button_select"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/start_game"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</LinearLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5332101373774587/6709527742"><!--ca-app-pub-3940256099942544/6300978111-->
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>

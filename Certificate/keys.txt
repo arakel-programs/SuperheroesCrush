@@ -1,0 +1,5 @@
+  Keystore path
+password - ErkrordXax!!09	
+  Key Alias
+key-superheroescrush
+password - ErkrordXax!!09
