@@ -10,26 +10,26 @@ open class OnSwipeListener(context: Context?) : View.OnTouchListener
     var gestureDelector: GestureDetector
 
     override fun onTouch(p0: View?, motionEvent: MotionEvent?): Boolean {
-        return gestureDelector.onTouchEvent(motionEvent)
+        return gestureDelector.onTouchEvent(motionEvent!!)
     }
 
     inner class GestureListener : GestureDetector.SimpleOnGestureListener(){
 
         val SWIPE_THRESOLD = 100
         val SWIPE_VELOCITY_THRESOLD = 100
-        override fun onDown(e: MotionEvent?): Boolean {
+        override fun onDown(e: MotionEvent): Boolean {
             return true
         }
 
         override fun onFling(
-            e1: MotionEvent,
+            e1: MotionEvent?,
             e2: MotionEvent,
             velocityX: Float,
             velocityY: Float
         ): Boolean {
             var result = false
 
-            val yDiff = e2.y -e1.y
+            val yDiff = e2.y - e1!!.y
             val xDiff = e2.x -e1.x
             // it means that we are either going
             // to left or right direction &
