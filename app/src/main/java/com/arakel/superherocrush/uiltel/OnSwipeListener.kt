@@ -9,35 +9,30 @@ open class OnSwipeListener(context: Context?) : View.OnTouchListener
 {
     var gestureDelector: GestureDetector
 
-    override fun onTouch(p0: View?, motionEvent: MotionEvent?): Boolean {
-        return gestureDelector.onTouchEvent(motionEvent!!)
+    override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
+        return gestureDelector.onTouchEvent(motionEvent)
     }
 
     inner class GestureListener : GestureDetector.SimpleOnGestureListener(){
 
         val SWIPE_THRESOLD = 100
         val SWIPE_VELOCITY_THRESOLD = 100
-        override fun onDown(e: MotionEvent): Boolean {
+        override fun onDown(event: MotionEvent): Boolean {
             return true
         }
 
-        override fun onFling(
-            e1: MotionEvent?,
-            e2: MotionEvent,
-            velocityX: Float,
-            velocityY: Float
-        ): Boolean {
+        override fun onFling(e1: MotionEvent?, e2: MotionEvent, p2: Float, p3: Float): Boolean {
             var result = false
 
             val yDiff = e2.y - e1!!.y
-            val xDiff = e2.x -e1.x
+            val xDiff = e2.x - e1.x
             // it means that we are either going
             // to left or right direction &
             // Top to bottom direction
 
             if (Math.abs(xDiff) > Math.abs(yDiff)){
                 if (Math.abs(xDiff) > SWIPE_THRESOLD
-                    && Math.abs(velocityX) > SWIPE_VELOCITY_THRESOLD) {
+                    && Math.abs(p2) > SWIPE_VELOCITY_THRESOLD) {
                     if (xDiff > 0) {
                         onSwipeRight()
                     } else {
@@ -47,7 +42,7 @@ open class OnSwipeListener(context: Context?) : View.OnTouchListener
                 }
             }
             else if (Math.abs(yDiff) > SWIPE_THRESOLD
-                && Math.abs(velocityY) > SWIPE_VELOCITY_THRESOLD){
+                && Math.abs(p3) > SWIPE_VELOCITY_THRESOLD){
                 if (yDiff > 0){
                     onSwipeBottom()
                 }
